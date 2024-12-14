@@ -93,11 +93,6 @@ This project is a perfect demonstration of how technology can simplify complex t
 if __name__ == '__main__': 
     main()
 
-########################################
-#try to include also some quick codes in the web
-#about the model
-########################################
-
  #######################################################
  #slide section
  #######################################################
@@ -132,22 +127,28 @@ with st.container(border=True):
      while True:
      # Load the current image and resize it
       img = Image.open(images[st.session_state.slide_index])
-      img = img.resize((width, height))
 
       # Center the image using columns
       col1, col2, col3 = st.columns([1, 2, 1])  # Adjust the column ratio to center the image
       with col2:
-        st.image(img, use_column_width=True)
+        st.image(img, use_container_width=True)
 
       # Wait for 2 seconds
       time.sleep(2)
-
+      st.markdown(
+        """
+        <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
+        <p style="text-align: center; font-size: 14px;">
+        <span>Developed with ❤️ from Kigali, Rwanda.</span>
+        </p>
+        """,
+        unsafe_allow_html=True,
+        )
       # Update the slide index
       update_slide()
 
       # Rerun the Streamlit script to update the image
       st.rerun()
-
 
 
 
