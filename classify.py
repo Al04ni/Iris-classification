@@ -5,8 +5,12 @@ import os
 import time
 import pickle
 
-st.set_page_config(page_title='Iris Flowers')
-#st.set_page_config(page_icon='')
+st.set_page_config(
+    page_title="Iris Species",
+    page_icon="🌸",
+    layout="centered",
+    initial_sidebar_state="auto",
+)
 
 # Load the saved model
 @st.cache_resource  # Caches the model to avoid reloading every time
